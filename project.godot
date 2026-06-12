@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="JupiterGameJam"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="uid://cnbe5ejj3s3cq"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "gray",
+"res://Core/Classes/": "red",
+"res://Core/Debug/": "yellow",
+"res://Core/Globals/": "red",
+"res://Core/Resources/": "green",
+"res://Core/Scenes/": "blue"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
