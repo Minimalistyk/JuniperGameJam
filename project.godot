@@ -19,6 +19,19 @@ config/icon="uid://cnbe5ejj3s3cq"
 SceneManager="*uid://b42y45bheyrjx"
 SignalManager="*uid://b617awbbufdwx"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+window/size/window_width_override=1280
+
+[editor]
+
+naming/scene_name_casing=1
+naming/script_name_casing=1
+
 [file_customization]
 
 folder_colors={
