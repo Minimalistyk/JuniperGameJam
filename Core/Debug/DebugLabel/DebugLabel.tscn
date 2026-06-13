@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ckorsosv61bwe"]
+
+[ext_resource type="Script" uid="uid://cqay7kokcb8nu" path="res://Core/Debug/DebugLabel/DebugLabel.gd" id="1_hgv5f"]
+[ext_resource type="LabelSettings" uid="uid://caf4tnjvdn0ii" path="res://Core/Resources/DebugLabelYellow16/DebugLabelYellow16.tres" id="1_xc65y"]
+
+[node name="DebugLabel" type="Label" unique_id=127281576]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PRZYKLADOWY TEXT"
+label_settings = ExtResource("1_xc65y")
+script = ExtResource("1_hgv5f")
