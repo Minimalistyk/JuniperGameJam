@@ -1,11 +1,6 @@
 extends Node
 
+signal on_create_object(pos, ob_type)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func emit_on_create_object(pos: Vector2, ob_type: Constants.OBJECT_TYPE) -> void:
+	on_create_object.emit(pos, ob_type)

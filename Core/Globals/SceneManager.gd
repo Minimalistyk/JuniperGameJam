@@ -1,11 +1,16 @@
 extends Node
 
+#sciezki do scen
+#const MAINMENU: PackedScene = preload("uid:xyz")
+#const LEVEL1: PackedScene = preload("uid:xyz")
+#const LEVEL2: PackedScene = preload("uid:xyz")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+func load_next_level(destination: PackedScene):
+	get_tree().change_scene_to_packed(destination)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func load_next_level_transison(destination: PackedScene, effect: String):
+	#+kod do jakiegos sciemnainia ekranu albo innego efektu, czekanie itd
+	#wydaje mi sie ze jesli cosbysmy chcieli to bedzie potrzebny slownik z efektami albo jakis ciąf ifów
+	#szczerze jeszcze nie wiem ale zgaduje ze nic z tym nei zrobimy XD
+	load_next_level(destination)

@@ -14,6 +14,11 @@ config/name="JupiterGameJam"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://cnbe5ejj3s3cq"
 
+[autoload]
+
+SceneManager="*uid://b42y45bheyrjx"
+SignalManager="*uid://b617awbbufdwx"
+
 [file_customization]
 
 folder_colors={
