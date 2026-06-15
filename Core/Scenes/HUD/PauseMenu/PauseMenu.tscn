@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://d1ul87ri12w2v"]
+
+[ext_resource type="Script" uid="uid://cnw704tu8rvsi" path="res://Core/Scenes/HUD/PauseMenu/PauseMenu.gd" id="1_d3lgo"]
+[ext_resource type="Shader" uid="uid://dinj642hgjmwr" path="res://Core/Scenes/HUD/PauseMenu/PauseMenuBlurShader.gdshader" id="2_5odon"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="2_8giyy"]
+[ext_resource type="LabelSettings" uid="uid://dqsl7r7x5iob6" path="res://Core/Resources/LabelWhite24Black4/LabelWhite24Black4.tres" id="2_kdkgj"]
+[ext_resource type="StyleBox" uid="uid://dpsh7lfonjemw" path="res://Core/Resources/PauseMenuButtons/ButtonNormal.tres" id="5_gagmv"]
+[ext_resource type="StyleBox" uid="uid://thxt00qlq6wm" path="res://Core/Resources/PauseMenuButtons/ButtonPressed.tres" id="6_vp24t"]
+[ext_resource type="StyleBox" uid="uid://cvt71sj5xd676" path="res://Core/Resources/PauseMenuButtons/ButtonHover.tres" id="7_p550f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01lvx"]
+shader = ExtResource("2_5odon")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsx6e"]
+bg_color = Color(0.08235294, 0.08627451, 0.1254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_tuvo1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlurRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gagmv"]
+resource_name = "blur"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlurRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.800000038]
+}
+
+[sub_resource type="Animation" id="Animation_5odon"]
+resource_name = "quit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"close_app"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vp24t"]
+_data = {
+&"RESET": SubResource("Animation_tuvo1"),
+&"blur": SubResource("Animation_gagmv"),
+&"quit": SubResource("Animation_5odon")
+}
+
+[node name="PauseMenu" type="Control" unique_id=42163893]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3lgo")
+
+[node name="BlurRect" type="ColorRect" parent="." unique_id=1819893194]
+material = SubResource("ShaderMaterial_01lvx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenuContainer" type="PanelContainer" parent="." unique_id=1850245900]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -220.00003
+offset_right = 198.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsx6e")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenuContainer" unique_id=1205058933]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContWholeMenu" type="VBoxContainer" parent="PauseMenuContainer/MarginContainer" unique_id=1541733533]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="TitleLabel" type="Label" parent="PauseMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=618208321]
+layout_mode = 2
+text = "PAUSE"
+label_settings = ExtResource("2_kdkgj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VboxContButtons" type="VBoxContainer" parent="PauseMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=1903324993]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="ResumeButton" type="Button" parent="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=1276459270]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_8giyy")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("5_gagmv")
+theme_override_styles/pressed = ExtResource("6_vp24t")
+theme_override_styles/hover = ExtResource("7_p550f")
+text = "RESUME"
+
+[node name="SettingsButton" type="Button" parent="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=1731168056]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_8giyy")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("5_gagmv")
+theme_override_styles/pressed = ExtResource("6_vp24t")
+theme_override_styles/hover = ExtResource("7_p550f")
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=473618540]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_8giyy")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("5_gagmv")
+theme_override_styles/pressed = ExtResource("6_vp24t")
+theme_override_styles/hover = ExtResource("7_p550f")
+text = "QUIT
+"
+
+[node name="AnimPlayerPauseMenu" type="AnimationPlayer" parent="." unique_id=1490509856]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_vp24t")
+
+[node name="BlackRect" type="ColorRect" parent="." unique_id=320673805]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/ResumeButton" to="." method="resume"]
+[connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SettingsButton" to="." method="open_options"]
+[connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/QuitButton" to="." method="quit"]

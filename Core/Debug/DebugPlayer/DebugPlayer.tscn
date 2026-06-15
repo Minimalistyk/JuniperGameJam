@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bbtwtej3ijffq"]
+
+[ext_resource type="Texture2D" uid="uid://duuw3uhp5xoqf" path="res://Assets/icon.svg" id="1_w0vbb"]
+[ext_resource type="Script" uid="uid://7jxepapqtexn" path="res://Core/Debug/DebugPlayer/DebugPlayer.gd" id="1_xk0kx"]
+
+[node name="DebugPlayer" type="Sprite2D" unique_id=1219467392]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_w0vbb")
+script = ExtResource("1_xk0kx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=710871946]
