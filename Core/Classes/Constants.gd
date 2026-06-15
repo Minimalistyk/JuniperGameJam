@@ -8,3 +8,9 @@ enum OBJECT_TYPE{
 	#CAT
 	#dzieki temu mozemy ich uzywac np w object makerze lub innych skryptach
 }
+
+enum PAUSE_STATES {
+	PLAYING,
+	HARD_PAUSE
+	#SOFT_PASUE
+}

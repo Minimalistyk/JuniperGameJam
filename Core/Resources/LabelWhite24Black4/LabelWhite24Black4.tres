@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dqsl7r7x5iob6"]
+
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="1_chios"]
+
+[resource]
+font = ExtResource("1_chios")
+font_size = 128
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
