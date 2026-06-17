@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1ul87ri12w2v" path="res://Core/Scenes/HUD/PauseMenu/PauseMenu.tscn" id="1_fqod4"]
 [ext_resource type="PackedScene" uid="uid://bbtwtej3ijffq" path="res://Core/Debug/DebugPlayer/DebugPlayer.tscn" id="1_k1o0w"]
+[ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="2_k5dc6"]
 [ext_resource type="Texture2D" uid="uid://cnbe5ejj3s3cq" path="res://Assets/anime.jpg" id="3_k5dc6"]
 
 [node name="DebugMichalLevel" type="Node2D" unique_id=321885306]
@@ -10,10 +11,12 @@
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=42163893 instance=ExtResource("1_fqod4")]
 
+[node name="OptionsMenu" parent="CanvasLayer" unique_id=86183853 instance=ExtResource("2_k5dc6")]
+
 [node name="Anime" type="Sprite2D" parent="." unique_id=2087929257]
 position = Vector2(371.99997, 330)
 scale = Vector2(1.6331096, 1.4541388)
 texture = ExtResource("3_k5dc6")
 
 [node name="DebugPlayer" parent="." unique_id=1219467392 instance=ExtResource("1_k1o0w")]
-position = Vector2(228.99997, 125)
+position = Vector2(272, 142)
