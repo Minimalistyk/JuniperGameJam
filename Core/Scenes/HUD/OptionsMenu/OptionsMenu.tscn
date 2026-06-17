@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://cmnilafhfqyap"]
+
+[ext_resource type="Script" uid="uid://bj27c5n1blmko" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.gd" id="1_iatim"]
+[ext_resource type="Texture2D" uid="uid://h4vhqby06avo" path="res://Assets/HUD/Slider.png" id="3_iatim"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_qray3"]
+[ext_resource type="StyleBox" uid="uid://cl5y7j71eeqku" path="res://Core/Resources/VolumeSliders/Empty.tres" id="4_2pwlk"]
+[ext_resource type="StyleBox" uid="uid://dpsh7lfonjemw" path="res://Core/Resources/PauseMenuButtons/ButtonNormal.tres" id="4_kf17o"]
+[ext_resource type="StyleBox" uid="uid://thxt00qlq6wm" path="res://Core/Resources/PauseMenuButtons/ButtonPressed.tres" id="5_baomx"]
+[ext_resource type="StyleBox" uid="uid://bnx2vjy61g4kf" path="res://Core/Resources/VolumeSliders/GrabbedAndGrabbedHighlight.tres" id="5_qray3"]
+[ext_resource type="StyleBox" uid="uid://cvt71sj5xd676" path="res://Core/Resources/PauseMenuButtons/ButtonHover.tres" id="6_7x74c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6arl"]
+bg_color = Color(0.08235294, 0.08627451, 0.1254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_him6m"]
+font = ExtResource("3_qray3")
+font_size = 114
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iatim"]
+font = ExtResource("3_qray3")
+font_size = 48
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pwlk"]
+atlas = ExtResource("3_iatim")
+region = Rect2(0, 0, 0, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iatim"]
+atlas = ExtResource("3_iatim")
+region = Rect2(0, 0, 16, 16)
+
+[node name="OptionsMenu" type="Control" unique_id=86183853]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iatim")
+
+[node name="OptionsMenuContainer" type="PanelContainer" parent="." unique_id=1591139592]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -220.00003
+offset_right = 198.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l6arl")
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionsMenuContainer" unique_id=1912794390]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContWholeMenu" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer" unique_id=956169319]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TitleLabel" type="Label" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=494656689]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_him6m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VboxContButtons" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=1907487356]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="SliderContainer" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=1277030030]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer" unique_id=1328777814]
+layout_mode = 2
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_iatim")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer" unique_id=514856036]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
+theme_override_styles/slider = ExtResource("4_2pwlk")
+theme_override_styles/grabber_area = ExtResource("5_qray3")
+theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
+value = 100.0
+
+[node name="SliderContainer2" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=2046893671]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer2" unique_id=9096817]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_iatim")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer2" unique_id=1222528582]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
+theme_override_styles/slider = ExtResource("4_2pwlk")
+theme_override_styles/grabber_area = ExtResource("5_qray3")
+theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
+value = 100.0
+
+[node name="SliderContainer3" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=1507382479]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer3" unique_id=1452346830]
+layout_mode = 2
+text = "HUD"
+label_settings = SubResource("LabelSettings_iatim")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HudSlider" type="HSlider" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer3" unique_id=1113074247]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
+theme_override_styles/slider = ExtResource("4_2pwlk")
+theme_override_styles/grabber_area = ExtResource("5_qray3")
+theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
+value = 100.0
+
+[node name="BackButton" type="Button" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=793019443]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_qray3")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("4_kf17o")
+theme_override_styles/pressed = ExtResource("5_baomx")
+theme_override_styles/hover = ExtResource("6_7x74c")
+text = "BACK
+"
+
+[connection signal="pressed" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/BackButton" to="." method="back"]
