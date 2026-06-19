@@ -14,3 +14,8 @@ signal _on_options_menu_close()
 
 func emit_on_options_menu_close() -> void:
 	_on_options_menu_close.emit()
+
+signal _on_dagger_thrown(pos: Vector2)
+
+func emit_on_dagger_thrown(pos: Vector2) -> void:
+	_on_dagger_thrown.emit(pos)
