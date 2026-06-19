@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bmwtsc4hnc407"]
 
 [ext_resource type="PackedScene" uid="uid://d1ul87ri12w2v" path="res://Core/Scenes/HUD/PauseMenu/PauseMenu.tscn" id="1_fqod4"]
-[ext_resource type="PackedScene" uid="uid://bbtwtej3ijffq" path="res://Core/Debug/DebugPlayer/DebugPlayer.tscn" id="1_k1o0w"]
+[ext_resource type="Script" uid="uid://ddrmodq71u3pd" path="res://Core/Debug/DebugMichalLevel/DebugMichalLevel.gd" id="1_phdws"]
 [ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="2_k5dc6"]
 [ext_resource type="Texture2D" uid="uid://cnbe5ejj3s3cq" path="res://Assets/anime.jpg" id="3_k5dc6"]
+[ext_resource type="PackedScene" uid="uid://d3j3nk4q5w2yj" path="res://Core/Scenes/HUD/Crosshair/Crosshair.tscn" id="4_k5dc6"]
+[ext_resource type="PackedScene" uid="uid://isx24mpfq7we" path="res://Core/Scenes/Utility/ObjectMaker/ObjectMaker.tscn" id="6_odjrr"]
 
 [node name="DebugMichalLevel" type="Node2D" unique_id=321885306]
+script = ExtResource("1_phdws")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=140367533]
 
@@ -18,5 +21,11 @@ position = Vector2(371.99997, 330)
 scale = Vector2(1.6331096, 1.4541388)
 texture = ExtResource("3_k5dc6")
 
-[node name="DebugPlayer" parent="." unique_id=1219467392 instance=ExtResource("1_k1o0w")]
-position = Vector2(272, 142)
+[node name="Crosshair" parent="." unique_id=166048136 instance=ExtResource("4_k5dc6")]
+position = Vector2(414, 317)
+rotation_speed = 2.0
+drunk_level = 2
+pulse_speed = 2.0
+max_scale = 6.0
+
+[node name="ObjectMaker" parent="." unique_id=831495408 instance=ExtResource("6_odjrr")]

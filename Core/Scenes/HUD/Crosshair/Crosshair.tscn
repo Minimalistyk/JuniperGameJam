@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d3j3nk4q5w2yj"]
+
+[ext_resource type="Script" uid="uid://cm688df8phx18" path="res://Core/Scenes/HUD/Crosshair/Crosshair.gd" id="1_ko16k"]
+[ext_resource type="Texture2D" uid="uid://h4vhqby06avo" path="res://Assets/HUD/Slider.png" id="1_tadyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko16k"]
+atlas = ExtResource("1_tadyo")
+region = Rect2(0, 16, 16, 16)
+
+[node name="Crosshair" type="Node2D" unique_id=166048136]
+script = ExtResource("1_ko16k")
+drunk_level = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599090370]
+unique_name_in_owner = true
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_ko16k")

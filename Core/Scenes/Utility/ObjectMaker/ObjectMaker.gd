@@ -2,14 +2,12 @@ class_name ObjectMaker
 extends Node2D
 
 const OBJECT_SCENES: Dictionary[Constants.OBJECT_TYPE, PackedScene] ={
-	#ciagnac przyklad duszka i kota:
-	#Constants.OBJECT_TYPE.GHOST: preload("uid://xyz")
-	#Constants.OBJECT_TYPE.CAT preload("uid://xyzt")
+	Constants.OBJECT_TYPE.DEBUG_POINT: preload("res://Core/Debug/DebugPoint/DebugPoint.tscn")
 }
 
 func _enter_tree() -> void:
 	#kod łączący z signal managerem syganały do tworzenia obiektów
-	SignalManager.on_create_object.connect(on_create_object)
+	SignalManager._on_create_object.connect(on_create_object)
 	pass
 
 func check_if_exists(object_type: Constants.OBJECT_TYPE) -> bool:
