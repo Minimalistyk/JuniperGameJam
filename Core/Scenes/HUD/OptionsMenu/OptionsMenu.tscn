@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://thxt00qlq6wm" path="res://Core/Resources/PauseMenuButtons/ButtonPressed.tres" id="5_baomx"]
 [ext_resource type="StyleBox" uid="uid://bnx2vjy61g4kf" path="res://Core/Resources/VolumeSliders/GrabbedAndGrabbedHighlight.tres" id="5_qray3"]
 [ext_resource type="StyleBox" uid="uid://cvt71sj5xd676" path="res://Core/Resources/PauseMenuButtons/ButtonHover.tres" id="6_7x74c"]
+[ext_resource type="Script" uid="uid://dbu0uoj43o1lr" path="res://Core/Scenes/HUD/OptionsMenu/AudioControllSlider.gd" id="6_kf17o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6arl"]
 bg_color = Color(0.08235294, 0.08627451, 0.1254902, 1)
@@ -105,6 +106,8 @@ theme_override_styles/slider = ExtResource("4_2pwlk")
 theme_override_styles/grabber_area = ExtResource("5_qray3")
 theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
 value = 100.0
+script = ExtResource("6_kf17o")
+audio_bus_name = "Music"
 
 [node name="SliderContainer2" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=2046893671]
 layout_mode = 2
@@ -126,6 +129,8 @@ theme_override_styles/slider = ExtResource("4_2pwlk")
 theme_override_styles/grabber_area = ExtResource("5_qray3")
 theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
 value = 100.0
+script = ExtResource("6_kf17o")
+audio_bus_name = "SFX"
 
 [node name="SliderContainer3" type="VBoxContainer" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons" unique_id=1507382479]
 layout_mode = 2
@@ -146,7 +151,11 @@ theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")
 theme_override_styles/grabber_area = ExtResource("5_qray3")
 theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_kf17o")
+audio_bus_name = "HUD"
 
 [node name="BackButton" type="Button" parent="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu" unique_id=793019443]
 layout_mode = 2
@@ -160,4 +169,8 @@ theme_override_styles/hover = ExtResource("6_7x74c")
 text = "BACK
 "
 
+[connection signal="value_changed" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer/MusicSlider" to="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer/MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer2/SfxSlider" to="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer2/SfxSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer3/HudSlider" to="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SliderContainer3/HudSlider" method="_on_value_changed"]
+[connection signal="mouse_entered" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/BackButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="OptionsMenuContainer/MarginContainer/VBoxContWholeMenu/BackButton" to="." method="back"]

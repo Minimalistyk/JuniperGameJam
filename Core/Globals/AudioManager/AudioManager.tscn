@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ch6j342gya8ps"]
+
+[ext_resource type="Script" uid="uid://ohfef3xbkr0n" path="res://Core/Globals/AudioManager/AudioManager.gd" id="1_5kbwt"]
+
+[node name="AudioManager" type="Node" unique_id=1651399873]
+script = ExtResource("1_5kbwt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1264710654]
