@@ -206,6 +206,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="mouse_entered" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/ResumeButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/ResumeButton" to="." method="resume"]
+[connection signal="mouse_entered" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SettingsButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/SettingsButton" to="." method="open_options"]
+[connection signal="mouse_entered" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/QuitButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="PauseMenuContainer/MarginContainer/VBoxContWholeMenu/VboxContButtons/QuitButton" to="." method="quit"]

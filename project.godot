@@ -14,11 +14,16 @@ config/name="JuniperGameJam"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://cnbe5ejj3s3cq"
 
+[audio]
+
+buses/default_bus_layout="uid://clqgyk4oealvp"
+
 [autoload]
 
 SceneManager="*uid://b42y45bheyrjx"
 SignalManager="*uid://b617awbbufdwx"
 PauseManager="*uid://ct8h3yg70kyaq"
+AudioManager="*uid://ohfef3xbkr0n"
 
 [display]
 
