@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://c2iqauwhtg3gb"]
+
+[ext_resource type="Texture2D" uid="uid://bkpu7eiyjsroa" path="res://Assets/Saber/saber_anim.png" id="1_4xi41"]
+[ext_resource type="Script" uid="uid://ub1d7hqshs4t" path="res://Core/Scenes/HUD/GameHUD/Saber/Saber.gd" id="1_aob0d"]
+[ext_resource type="Texture2D" uid="uid://covbxadeu8ejl" path="res://Assets/Saber/sabera.png" id="2_aob0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7b6e"]
+atlas = ExtResource("2_aob0d")
+region = Rect2(0, 0, 0, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aob0d"]
+atlas = ExtResource("2_aob0d")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5ji7"]
+atlas = ExtResource("1_4xi41")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbedw"]
+atlas = ExtResource("1_4xi41")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht6mx"]
+atlas = ExtResource("1_4xi41")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20ebm"]
+atlas = ExtResource("1_4xi41")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2tjk"]
+atlas = ExtResource("1_4xi41")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp8c6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aob0d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5ji7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbedw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht6mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20ebm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2tjk")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 12.0
+}]
+
+[node name="Saber" type="Control" unique_id=2119947163]
+custom_minimum_size = Vector2(48, 96)
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+script = ExtResource("1_aob0d")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1224683980]
+position = Vector2(24, 48)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_v7b6e")
+hframes = 3
+
+[node name="AnimSaber" type="AnimatedSprite2D" parent="." unique_id=1161713354]
+position = Vector2(24, 48)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bp8c6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AnimTimer" type="Timer" parent="." unique_id=947888452]
+autostart = true
+
+[connection signal="animation_finished" from="AnimSaber" to="." method="play_idle"]
+[connection signal="timeout" from="AnimTimer" to="." method="play_anim"]
