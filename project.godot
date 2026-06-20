@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="JuniperGameJam"
+run/main_scene="uid://cos1amfkutc00"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://cnbe5ejj3s3cq"
 
@@ -24,8 +25,14 @@ PauseManager="*uid://ct8h3yg70kyaq"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/canvas_textures/default_texture_filter=1
+
+[dotnet]
+
+project/assembly_name="JupiterGameJam"
 
 [editor]
 
