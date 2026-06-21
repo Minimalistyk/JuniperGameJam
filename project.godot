@@ -25,6 +25,7 @@ SceneManager="*uid://b42y45bheyrjx"
 SignalManager="*uid://b617awbbufdwx"
 PauseManager="*uid://ct8h3yg70kyaq"
 AudioManager="*uid://ohfef3xbkr0n"
+GameManager="*uid://d1bpmlsj17rtp"
 
 [display]
 

@@ -67,7 +67,7 @@ animations = [{
 custom_minimum_size = Vector2(48, 96)
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 script = ExtResource("1_aob0d")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1224683980]
