@@ -24,3 +24,5 @@ func on_create_object(pos: Vector2, object_type:  Constants.OBJECT_TYPE)-> void:
 	var new_object =	OBJECT_SCENES[object_type].instantiate()
 	new_object.global_position = pos
 	call_deferred("add_child", new_object)
+
+#parent który jest równy basic na self, parebt = self, lub parent = target

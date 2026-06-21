@@ -1,5 +1,7 @@
 extends Node
 
+signal on_target_hit(points: int)
+
 signal _on_create_object(pos, ob_type)
 
 func emit_on_create_object(pos: Vector2, ob_type: Constants.OBJECT_TYPE) -> void:
