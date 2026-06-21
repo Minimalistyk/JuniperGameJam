@@ -11,3 +11,7 @@ enum PAUSE_STATES {
 	HARD_PAUSE
 	#SOFT_PASUE
 }
+
+enum SCENES {
+	MAIN_GAME
+}

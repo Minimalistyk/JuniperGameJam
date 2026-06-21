@@ -9,8 +9,8 @@ var music_tracks: Dictionary = {
 var hud_tracks: Dictionary = {
 	"MENU_6" = preload("uid://1rghy521vw11"), #click
 	"MENU_7" = preload("uid://ca2ehqmrrwvwr"), #hover
-	"MENU_24" = preload("uid://qwddk246knm2")
-	
+	"MENU_24" = preload("uid://qwddk246knm2"),
+	"WOOD_CHOP"= preload("uid://cr3j884cli1hk")
 }
 
 var sfx_tracks: Dictionary = {
@@ -19,7 +19,7 @@ var sfx_tracks: Dictionary = {
 
 func _ready() -> void:
 	hover_sound = create_player("HUD", hud_tracks["MENU_7"])
-	click_sound = create_player("HUD", hud_tracks["MENU_6"])
+	click_sound = create_player("HUD", hud_tracks["WOOD_CHOP"])
 	music = create_player("Music",null) #cos sie wymysli
 
 func create_player(bus_name: String, stream: AudioStream = null) -> AudioStreamPlayer:

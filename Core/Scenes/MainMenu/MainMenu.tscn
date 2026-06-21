@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cos1amfkutc00"]
+
+[ext_resource type="Texture2D" uid="uid://dg52yohwk0yih" path="res://Assets/bg-test.jpg" id="1_6waah"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="1_8n4uo"]
+[ext_resource type="Script" uid="uid://cf7pvdai04m0s" path="res://Core/Scenes/MainMenu/MainMenu.gd" id="1_jkd46"]
+[ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="3_6waah"]
+[ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_yott5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8n4uo"]
+font = ExtResource("1_8n4uo")
+font_size = 96
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8n4uo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yott5"]
+resource_name = "quit"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"close_app"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkd46"]
+_data = {
+&"RESET": SubResource("Animation_8n4uo"),
+&"quit": SubResource("Animation_yott5")
+}
+
+[node name="MainMenu" type="Control" unique_id=1058400276]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkd46")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1213779498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6waah")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=224943812]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 115.0
+offset_right = 74.0
+offset_bottom = 138.0
+grow_horizontal = 2
+text = "DRUNK THROWERS"
+label_settings = SubResource("LabelSettings_8n4uo")
+
+[node name="MenuWheel" parent="." unique_id=1883214477 instance=ExtResource("3_6waah")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.5
+offset_top = -140.0
+offset_right = 246.5
+offset_bottom = 341.0
+grow_vertical = 2
+
+[node name="VerLabel" type="Label" parent="." unique_id=408631313]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -34.0
+offset_right = -11.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
+text = "Ver 0.1.210626"
+
+[node name="MainMenuAnimPlayer" type="AnimationPlayer" parent="." unique_id=1686535297]
+libraries/ = SubResource("AnimationLibrary_jkd46")
+
+[node name="OptionsMenu" parent="." unique_id=86183853 instance=ExtResource("5_yott5")]
+layout_mode = 1
+
+[node name="BlackRect" type="ColorRect" parent="." unique_id=1929607744]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

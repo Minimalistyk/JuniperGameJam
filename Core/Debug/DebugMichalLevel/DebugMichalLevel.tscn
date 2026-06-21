@@ -10,9 +10,9 @@
 
 [node name="DebugMichalLevel" type="Node2D" unique_id=321885306]
 script = ExtResource("1_phdws")
-test_drunk_level = 2
+test_drunk_level = 3
 test_max_scale = 5.0
-test_total_shots = 3
+test_total_shots = 5
 test_points_needed = 1000
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=140367533]

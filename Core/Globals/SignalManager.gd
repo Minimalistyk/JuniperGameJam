@@ -19,3 +19,23 @@ signal _on_dagger_thrown(pos: Vector2)
 
 func emit_on_dagger_thrown(pos: Vector2) -> void:
 	_on_dagger_thrown.emit(pos)
+
+signal _on_start_button_pressed()
+
+func emit_on_start_button_pressed() -> void:
+	_on_start_button_pressed.emit()
+
+signal _on_quit_button_pressed()
+
+func emit_on_quit_button_pressed() -> void:
+	_on_quit_button_pressed.emit()
+
+signal _on_credits_button_pressed()
+
+func emit_on_credits_button_pressed() -> void:
+	_on_credits_button_pressed.emit()
+
+signal _on_options_button_pressed()
+
+func emit_on_options_button_pressed() -> void:
+	_on_options_button_pressed.emit()
