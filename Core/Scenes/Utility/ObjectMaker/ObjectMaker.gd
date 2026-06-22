@@ -18,9 +18,20 @@ func check_if_exists(object_type: Constants.OBJECT_TYPE) -> bool:
 		return false
 
 
-func on_create_object(pos: Vector2, object_type:  Constants.OBJECT_TYPE)-> void:
+func on_create_object(pos: Vector2, object_type: Constants.OBJECT_TYPE, parent: Node = null) -> void:
 	if !check_if_exists(object_type):
 		return
-	var new_object =	OBJECT_SCENES[object_type].instantiate()
-	new_object.global_position = pos
-	call_deferred("add_child", new_object)
+	var new_object = OBJECT_SCENES[object_type].instantiate()
+	
+	if parent != null and is_instance_valid(parent):
+		parent.add_child(new_object)
+		new_object.global_position = pos
+		
+		# --- REFORMOWANIE SKALI PUNKTU ---
+		# Wymuszamy, aby skala globalna punktu zawsze wynosiła 1, 
+		# ignorując to, jak bardzo powiększona jest tarcza:
+		new_object.global_scale = Vector2(0.1, 0.1)
+		# ---------------------------------
+	else:
+		call_deferred("add_child", new_object)
+		new_object.global_position = pos
