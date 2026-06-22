@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dwmmmpo5ebglc"]
+
+[ext_resource type="Script" uid="uid://dyuyddcbvixxs" path="res://Core/Scenes/Intro/Intro.gd" id="1_c0o3c"]
+[ext_resource type="Texture2D" uid="uid://4c8lboxjxgew" path="res://Assets/intro.png" id="1_phyql"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_ie0vw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewsq4"]
+atlas = ExtResource("1_phyql")
+region = Rect2(0, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ksqr"]
+atlas = ExtResource("1_phyql")
+region = Rect2(320, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gch8p"]
+atlas = ExtResource("1_phyql")
+region = Rect2(640, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhhff"]
+atlas = ExtResource("1_phyql")
+region = Rect2(960, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2708"]
+atlas = ExtResource("1_phyql")
+region = Rect2(1280, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_now16"]
+atlas = ExtResource("1_phyql")
+region = Rect2(1600, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkmwl"]
+atlas = ExtResource("1_phyql")
+region = Rect2(1920, 0, 320, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kyr5"]
+atlas = ExtResource("1_phyql")
+region = Rect2(2240, 0, 320, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbmdr"]
+font = ExtResource("3_ie0vw")
+font_size = 96
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Intro" type="Control" unique_id=836838476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0o3c")
+
+[node name="BG1" type="ColorRect" parent="." unique_id=512374793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=993780713]
+layout_mode = 1
+offset_left = -33.0
+offset_top = -6.0
+offset_right = 287.0
+offset_bottom = 174.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_ewsq4")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1225576014]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -656.0
+offset_top = -32.0
+offset_right = -336.0
+offset_bottom = 148.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_5ksqr")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=992858744]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -359.0
+offset_right = 323.0
+offset_bottom = -179.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_gch8p")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1610303015]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -671.0
+offset_top = -404.0
+offset_right = -351.0
+offset_bottom = -224.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_xhhff")
+
+[node name="BG2" type="ColorRect" parent="." unique_id=2053583128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1364640152]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_k2708")
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=1995538533]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -675.0
+offset_top = -32.0
+offset_right = -355.0
+offset_bottom = 148.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_now16")
+
+[node name="TextureRect7" type="TextureRect" parent="." unique_id=1716680443]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -377.0
+offset_right = 338.0
+offset_bottom = -197.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_fkmwl")
+
+[node name="TextureRect8" type="TextureRect" parent="." unique_id=935829204]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -668.0
+offset_top = -407.0
+offset_right = -348.0
+offset_bottom = -227.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_3kyr5")
+
+[node name="Label" type="Label" parent="." unique_id=866708077]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 641.0
+offset_right = 1474.0
+offset_bottom = 743.0
+text = "SPACE TO CONTINUE"
+label_settings = SubResource("LabelSettings_xbmdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1094750251]
