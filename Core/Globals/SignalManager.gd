@@ -2,10 +2,10 @@ extends Node
 
 signal on_target_hit(points: int)
 
-signal _on_create_object(pos, ob_type)
+signal _on_create_object(pos, ob_type, parent: Node)
 
-func emit_on_create_object(pos: Vector2, ob_type: Constants.OBJECT_TYPE) -> void:
-	_on_create_object.emit(pos, ob_type)
+func emit_on_create_object(pos: Vector2, ob_type: Constants.OBJECT_TYPE, parent: Node = null) -> void:
+	_on_create_object.emit(pos, ob_type, parent)
 
 signal _on_options_menu_show() 
 

@@ -14,6 +14,14 @@ test_max_scale = 5.0
 test_total_shots = 9
 test_points_needed = 1500
 
+[node name="Node2D" type="Node2D" parent="." unique_id=671331778]
+unique_name_in_owner = true
+position = Vector2(640, 390)
+
+[node name="Target" parent="Node2D" unique_id=953089784 instance=ExtResource("7_1a64v")]
+unique_name_in_owner = true
+position = Vector2(174, -3)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=178631333]
 
 [node name="GameHUD" parent="CanvasLayer" unique_id=589994002 instance=ExtResource("2_1a64v")]
@@ -29,11 +37,3 @@ offset_right = -2.0
 unique_name_in_owner = true
 
 [node name="ObjectMaker" parent="." unique_id=831495408 instance=ExtResource("6_4mm24")]
-
-[node name="Node2D" type="Node2D" parent="." unique_id=671331778]
-unique_name_in_owner = true
-position = Vector2(640, 390)
-
-[node name="Target" parent="Node2D" unique_id=953089784 instance=ExtResource("7_1a64v")]
-unique_name_in_owner = true
-position = Vector2(174, -3)

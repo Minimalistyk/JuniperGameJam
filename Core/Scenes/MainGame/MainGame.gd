@@ -39,14 +39,47 @@ func setup() -> void:
 	if game_hud.has_method("update_score"):
 		game_hud.update_score(current_score)
 	game_hud.start_game()
+	
+	
 
 func markit(pos: Vector2) -> void:
 	test_total_shots -= 1
-	SignalManager.emit_on_create_object(pos, Constants.OBJECT_TYPE.DEBUG_POINT)
 	
+	# 1. Sprawdzamy, czy trafiliśmy w tarczę
+	var hit_on_target: bool = false
 	if is_instance_valid(target):
-		target.hit_target(pos)
+		var distance = target.global_position.distance_to(pos)
+		if distance < target.max_radius:
+			hit_on_target = true
+			
+	# 2. Znajdujemy ObjectMakera w scenie (zakładamy, że nazywa się %ObjectMaker lub po prostu ObjectMaker)
+	var maker = get_node_or_null("%ObjectMaker")
+	if not maker:
+		maker = get_node_or_null("ObjectMaker")
 
+	# 3. Tworzymy obiekt bezpośrednio przez ObjectMakera, omijając SignalManagera
+	# Wywołujemy ObjectMakera bezpośrednio
+	if maker and maker.has_method("on_create_object"):
+		if hit_on_target:
+			# KLUCZOWA ZMIANA: Przekazujemy target.target_wheel zamiast samego target!
+			if is_instance_valid(target) and "target_wheel" in target:
+				maker.on_create_object(pos, Constants.OBJECT_TYPE.DEBUG_POINT, target.target_wheel)
+			else:
+				maker.on_create_object(pos, Constants.OBJECT_TYPE.DEBUG_POINT, target)
+				
+			target.hit_target(pos)
+		else:
+			# Pudło! Punkt tworzy się normalnie w świecie gry
+			maker.on_create_object(pos, Constants.OBJECT_TYPE.DEBUG_POINT)
+	# Aktualizacja HUD
+	game_hud.total_shots = test_total_shots
+	if game_hud.has_method("update_shots"):
+		game_hud.update_shots(test_total_shots)
+		
+	if test_total_shots == 0:
+		print("koniec!")
+
+	# HUD
 	game_hud.total_shots = test_total_shots
 	if game_hud.has_method("update_shots"):
 		game_hud.update_shots(test_total_shots)
