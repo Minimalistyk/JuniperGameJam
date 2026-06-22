@@ -12,7 +12,7 @@ func _process(_delta):
 	pass
 
 func change_to_main() -> void:
-	SceneManager.change_scene_to(Constants.SCENES.MAIN_GAME)
+	SceneManager.change_scene_to(Constants.SCENES.INTRO)
 
 func open_options() -> void:
 	SignalManager.emit_on_options_menu_show()
