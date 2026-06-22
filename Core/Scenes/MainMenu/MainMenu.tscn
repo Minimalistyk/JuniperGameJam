@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cos1amfkutc00"]
 
-[ext_resource type="Texture2D" uid="uid://dg52yohwk0yih" path="res://Assets/bg-test.jpg" id="1_6waah"]
 [ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="1_8n4uo"]
 [ext_resource type="Script" uid="uid://cf7pvdai04m0s" path="res://Core/Scenes/MainMenu/MainMenu.gd" id="1_jkd46"]
+[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/Intro/MainBG.png" id="2_2f7lw"]
 [ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="3_6waah"]
 [ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_yott5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4uo"]
 font = ExtResource("1_8n4uo")
-font_size = 96
+font_size = 124
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
@@ -25,6 +25,58 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WhiteRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2f7lw"]
+resource_name = "StartGame"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WhiteRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 
 [sub_resource type="Animation" id="Animation_yott5"]
@@ -61,6 +113,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkd46"]
 _data = {
 &"RESET": SubResource("Animation_8n4uo"),
+&"StartGame": SubResource("Animation_2f7lw"),
 &"quit": SubResource("Animation_yott5")
 }
 
@@ -80,17 +133,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_6waah")
+texture = ExtResource("2_2f7lw")
 
 [node name="TitleLabel" type="Label" parent="." unique_id=224943812]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -74.0
-offset_top = 115.0
-offset_right = 74.0
-offset_bottom = 138.0
+offset_left = -326.0
+offset_top = 73.0
+offset_right = 326.0
+offset_bottom = 172.0
 grow_horizontal = 2
 text = "DRUNK THROWERS"
 label_settings = SubResource("LabelSettings_8n4uo")
@@ -103,10 +156,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -246.5
-offset_top = -140.0
+offset_top = -158.0
 offset_right = 246.5
-offset_bottom = 341.0
+offset_bottom = 323.0
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 
 [node name="VerLabel" type="Label" parent="." unique_id=408631313]
 layout_mode = 1
@@ -122,7 +176,7 @@ offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
-text = "Ver 0.1.210626"
+text = "Ver 0.1.220626"
 
 [node name="MainMenuAnimPlayer" type="AnimationPlayer" parent="." unique_id=1686535297]
 libraries/ = SubResource("AnimationLibrary_jkd46")
@@ -140,3 +194,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="WhiteRect" type="ColorRect" parent="." unique_id=1465186941]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1356651774]
+unique_name_in_owner = true
