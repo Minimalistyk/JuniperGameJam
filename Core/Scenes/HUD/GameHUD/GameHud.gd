@@ -12,8 +12,13 @@ const SABER = preload("uid://c2iqauwhtg3gb")
 @onready var req_p_label: Label = %ReqPointsLabel
 
 func _ready() -> void:
-	# ODŁĄCZAMY stary sygnał rzutu, a PODŁĄCZAMY nowy sygnał punktów z tarczy:
-	SignalManager.on_target_hit.connect(update_score_from_target)
+	total_shots = GameManager.total_shots
+	points_needed = GameManager.points_needed
+	SignalManager._on_target_hit.connect(update_score_from_target)
+
+func _process(_delta: float) -> void:
+	if GameManager.STATE == GameManager.GAME_STATES.GAME_OVER:
+		visible= false
 
 func start_game() -> void: #to nie jest _ready!
 	p_label.text = str(points)
@@ -25,12 +30,6 @@ func start_game() -> void: #to nie jest _ready!
 		NS.total_shots_left = total_shots
 		h_box_container.add_child(NS)
 
-# NOWA FUNKCJA: Ta metoda dostaje już gotowe, pomnożone punkty z MainGame lub tarczy
 func update_score_from_target(points_earned: int) -> void:
 	points += points_earned
 	p_label.text = str(points)
-
-# Zostawiamy tę funkcję na wypadek, gdyby znajomy potrzebował jej do czegoś innego, 
-# ale już nie dodaje ona pozycji X do punktów.
-func update_p_label(value: Vector2) -> void:
-	pass

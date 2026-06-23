@@ -26,12 +26,6 @@ func on_create_object(pos: Vector2, object_type: Constants.OBJECT_TYPE, parent: 
 	if parent != null and is_instance_valid(parent):
 		parent.add_child(new_object)
 		new_object.global_position = pos
-		
-		# --- REFORMOWANIE SKALI PUNKTU ---
-		# Wymuszamy, aby skala globalna punktu zawsze wynosiła 1, 
-		# ignorując to, jak bardzo powiększona jest tarcza:
-		new_object.global_scale = Vector2(0.1, 0.1)
-		# ---------------------------------
 	else:
 		call_deferred("add_child", new_object)
 		new_object.global_position = pos

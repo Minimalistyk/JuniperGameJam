@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="1_8n4uo"]
 [ext_resource type="Script" uid="uid://cf7pvdai04m0s" path="res://Core/Scenes/MainMenu/MainMenu.gd" id="1_jkd46"]
-[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/Intro/MainBG.png" id="2_2f7lw"]
+[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="2_2f7lw"]
 [ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="3_6waah"]
 [ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_yott5"]
 
