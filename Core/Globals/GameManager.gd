@@ -2,7 +2,7 @@ extends Node
 const CURSOR = preload("uid://d0icul41gl0br")
 
 
-var drunk_level: int = 5#PODALCZAC
+var drunk_level: int = 1#PODALCZAC
 var pulse_speed: float = 5.0#PODALCZAC
 
 var min_scale: float = 0.5# niekoniecznie musimy je podalczac bo malo czasiu mamy

@@ -6,6 +6,7 @@ extends Node2D
 @onready var crosshair: Node2D = %Crosshair
 @onready var game_hud: Control = %GameHUD
 @onready var gameover_node: gameover_hud = %Gameover
+@onready var baloons: TextureRect = %Baloons
 
 # test gameplay vars
 var drunk_level: int
@@ -20,6 +21,7 @@ var points_mult: float = 1.5 # Mnożnik punktów, o którym pisał znajomy
 var current_score: int = 0
 
 func _ready() -> void:
+	baloons.position.y = 1440
 	drunk_level = GameManager.drunk_level
 	target.position = Vector2(25*drunk_level,25*drunk_level)
 	total_shots = GameManager.total_shots
@@ -35,10 +37,15 @@ func _process(delta: float) -> void:
 func checkwin() -> bool:
 	if GameManager.STATE == GameManager.GAME_STATES.CHECK_POINTS:
 		if current_score >= points_needed: 
-			print("BRAWO")
-			#SceneManager.change_scene_to()# tu scena na ktorej losujemy te nasze zmienne 
-			#moze jakas animacja okienko idk
-			return true
+			var tween = create_tween()
+			tween.tween_method(func(progress: float):
+				baloons.position.y = lerp(1440, -1440, progress)
+				baloons.position.x = sin(progress * 15.0) * 30.0, 0.0, 1.0, 3)
+			tween.tween_callback(func(): 
+				baloons.position.y = 1440
+				baloons.position.x = 0
+				#SceneManager.change_scene_to()# tu scena na ktorej losujemy te nasze zmienne 
+				return true)
 		elif total_shots>0:
 			GameManager.STATE = GameManager.GAME_STATES.AIM
 	return false

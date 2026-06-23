@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3j3nk4q5w2yj" path="res://Core/Scenes/HUD/Crosshair/Crosshair.tscn" id="5_b2ojb"]
 [ext_resource type="PackedScene" uid="uid://isx24mpfq7we" path="res://Core/Scenes/Utility/ObjectMaker/ObjectMaker.tscn" id="6_4mm24"]
 [ext_resource type="PackedScene" uid="uid://bsfbwqqb5g2xp" path="res://Core/Scenes/Target.tscn" id="7_1a64v"]
+[ext_resource type="Texture2D" uid="uid://dk5aacwr5msea" path="res://Assets/winscreen.png" id="7_b2ojb"]
 [ext_resource type="PackedScene" uid="uid://dgnxwdrmvy0xk" path="res://Core/Scenes/HUD/Gameover/Gameover.tscn" id="9_i5qds"]
 
 [node name="MainGame" type="Node2D" unique_id=216440914]
@@ -32,6 +33,14 @@ offset_right = -2.0
 
 [node name="Gameover" parent="CanvasLayer" unique_id=14947237 instance=ExtResource("9_i5qds")]
 unique_name_in_owner = true
+visible = false
+
+[node name="Baloons" type="TextureRect" parent="CanvasLayer" unique_id=1595125973]
+unique_name_in_owner = true
+offset_right = 1284.0
+offset_bottom = 1439.0
+texture = ExtResource("7_b2ojb")
+stretch_mode = 1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=671331778]
 unique_name_in_owner = true
