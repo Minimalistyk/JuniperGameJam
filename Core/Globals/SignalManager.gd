@@ -19,6 +19,16 @@ signal _on_options_menu_close()
 
 func emit_on_options_menu_close() -> void:
 	_on_options_menu_close.emit()
+	
+signal on_credits_menu_show
+
+func emit_on_credits_menu_show() -> void:
+	on_credits_menu_show.emit()
+	
+signal on_credits_menu_close
+
+func emit_on_credits_menu_close() -> void:
+	on_credits_menu_close.emit()
 
 signal _on_dagger_thrown(pos: Vector2)
 

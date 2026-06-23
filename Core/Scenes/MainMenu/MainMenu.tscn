@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="2_2f7lw"]
 [ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="3_6waah"]
 [ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_yott5"]
+[ext_resource type="PackedScene" uid="uid://cu7rg45kdngkb" path="res://Core/Scenes/HUD/CreditsMenu/Credits.tscn" id="6_kwkv3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4uo"]
 font = ExtResource("1_8n4uo")
@@ -195,6 +196,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Credits" parent="." unique_id=775341443 instance=ExtResource("6_kwkv3")]
+layout_mode = 1
 [node name="WhiteRect" type="ColorRect" parent="." unique_id=1465186941]
 visible = false
 modulate = Color(1, 1, 1, 0)

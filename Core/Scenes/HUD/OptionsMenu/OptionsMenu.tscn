@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cmnilafhfqyap"]
 
+[ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://BaseTheme.tres" id="1_baomx"]
 [ext_resource type="Script" uid="uid://bj27c5n1blmko" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.gd" id="1_iatim"]
 [ext_resource type="Texture2D" uid="uid://h4vhqby06avo" path="res://Assets/HUD/Slider.png" id="3_iatim"]
 [ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_qray3"]
@@ -9,13 +10,6 @@
 [ext_resource type="StyleBox" uid="uid://bnx2vjy61g4kf" path="res://Core/Resources/VolumeSliders/GrabbedAndGrabbedHighlight.tres" id="5_qray3"]
 [ext_resource type="StyleBox" uid="uid://cvt71sj5xd676" path="res://Core/Resources/PauseMenuButtons/ButtonHover.tres" id="6_7x74c"]
 [ext_resource type="Script" uid="uid://dbu0uoj43o1lr" path="res://Core/Scenes/HUD/OptionsMenu/AudioControllSlider.gd" id="6_kf17o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6arl"]
-bg_color = Color(0.08235294, 0.08627451, 0.1254902, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_him6m"]
 font = ExtResource("3_qray3")
@@ -46,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_baomx")
 script = ExtResource("1_iatim")
 
 [node name="OptionsMenuContainer" type="PanelContainer" parent="." unique_id=1591139592]
@@ -62,7 +57,7 @@ offset_right = 198.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_l6arl")
+theme = ExtResource("1_baomx")
 
 [node name="MarginContainer" type="MarginContainer" parent="OptionsMenuContainer" unique_id=1912794390]
 layout_mode = 2
@@ -100,6 +95,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_baomx")
 theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
 theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")
@@ -123,6 +119,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_baomx")
 theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
 theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")
@@ -146,6 +143,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_baomx")
 theme_override_icons/grabber = SubResource("AtlasTexture_2pwlk")
 theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")

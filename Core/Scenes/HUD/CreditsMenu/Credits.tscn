@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cu7rg45kdngkb"]
+
+[ext_resource type="Script" uid="uid://bq4e10ww1bq8f" path="res://Core/Scenes/HUD/CreditsMenu/Credits.gd" id="1_28it5"]
+[ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://BaseTheme.tres" id="2_q484d"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_ok50q"]
+[ext_resource type="StyleBox" uid="uid://dpsh7lfonjemw" path="res://Core/Resources/PauseMenuButtons/ButtonNormal.tres" id="8_wde22"]
+[ext_resource type="StyleBox" uid="uid://thxt00qlq6wm" path="res://Core/Resources/PauseMenuButtons/ButtonPressed.tres" id="9_p4i5m"]
+[ext_resource type="StyleBox" uid="uid://cvt71sj5xd676" path="res://Core/Resources/PauseMenuButtons/ButtonHover.tres" id="10_htqxi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxg06"]
+font = ExtResource("3_ok50q")
+font_size = 114
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control" unique_id=775341443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_q484d")
+script = ExtResource("1_28it5")
+
+[node name="CreditsMenu" type="PanelContainer" parent="." unique_id=1063764626]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -133.0
+offset_right = 124.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_q484d")
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsMenu" unique_id=1399304728]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContWholeMenu" type="VBoxContainer" parent="CreditsMenu/MarginContainer" unique_id=1261862259]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TitleLabel" type="Label" parent="CreditsMenu/MarginContainer/VBoxContWholeMenu" unique_id=106144057]
+layout_mode = 2
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_rxg06")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CreditsMenu/MarginContainer/VBoxContWholeMenu" unique_id=8694067]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ok50q")
+theme_override_font_sizes/font_size = 70
+text = "Michał Makoś
+Oliwia Jędryka"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CreditsMenu/MarginContainer/VBoxContWholeMenu" unique_id=802374342]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_ok50q")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("8_wde22")
+theme_override_styles/pressed = ExtResource("9_p4i5m")
+theme_override_styles/hover = ExtResource("10_htqxi")
+text = "BACK
+"
