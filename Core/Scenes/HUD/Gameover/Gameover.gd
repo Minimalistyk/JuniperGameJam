@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	texture_rect.rotation_degrees += 15 * delta
 
 func show_gameover(points: int) -> void:
+	visible = true
 	label_2.text = str(points)
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUART)

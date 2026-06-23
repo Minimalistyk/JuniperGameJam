@@ -198,6 +198,7 @@ grow_vertical = 2
 
 [node name="Credits" parent="." unique_id=775341443 instance=ExtResource("6_kwkv3")]
 layout_mode = 1
+
 [node name="WhiteRect" type="ColorRect" parent="." unique_id=1465186941]
 visible = false
 modulate = Color(1, 1, 1, 0)
