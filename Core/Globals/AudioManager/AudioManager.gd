@@ -7,8 +7,8 @@ var music_tracks: Dictionary = {
 	#"muzyka1": preload("res://xyz")
 }
 var hud_tracks: Dictionary = {
-	"MENU_6" = preload("uid://1rghy521vw11"), #click
-	"MENU_7" = preload("uid://ca2ehqmrrwvwr"), #hover
+	"MENU_6" = preload("uid://b0bcc0ng1job4"), #click
+	"MENU_7" = preload("uid://dxqi4cw8eq8l8"), #hover
 	"MENU_24" = preload("uid://qwddk246knm2"),
 	"WOOD_CHOP"= preload("uid://cr3j884cli1hk")
 }

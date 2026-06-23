@@ -61,6 +61,10 @@ func open_options() -> void:
 	SignalManager.emit_on_options_menu_show()
 	hide_menu_anim()
 
+func open_credits() -> void:
+	options_up = true
+	SignalManager.emit_on_credits_menu_show()
+	hide_menu_anim()
 
 func on_options_menu_close() -> void:
 	options_up = false
