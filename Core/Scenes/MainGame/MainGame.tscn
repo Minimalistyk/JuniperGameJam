@@ -2,25 +2,22 @@
 
 [ext_resource type="Script" uid="uid://b4xb3mbxug8m0" path="res://Core/Scenes/MainGame/MainGame.gd" id="1_bdu0g"]
 [ext_resource type="PackedScene" uid="uid://cbh2uculnrhph" path="res://Core/Scenes/HUD/GameHUD/GameHud.tscn" id="2_1a64v"]
+[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="2_3njer"]
 [ext_resource type="PackedScene" uid="uid://d1ul87ri12w2v" path="res://Core/Scenes/HUD/PauseMenu/PauseMenu.tscn" id="3_3njer"]
 [ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="4_i5qds"]
 [ext_resource type="PackedScene" uid="uid://d3j3nk4q5w2yj" path="res://Core/Scenes/HUD/Crosshair/Crosshair.tscn" id="5_b2ojb"]
 [ext_resource type="PackedScene" uid="uid://isx24mpfq7we" path="res://Core/Scenes/Utility/ObjectMaker/ObjectMaker.tscn" id="6_4mm24"]
 [ext_resource type="PackedScene" uid="uid://bsfbwqqb5g2xp" path="res://Core/Scenes/Target.tscn" id="7_1a64v"]
+[ext_resource type="PackedScene" uid="uid://dgnxwdrmvy0xk" path="res://Core/Scenes/HUD/Gameover/Gameover.tscn" id="9_i5qds"]
 
 [node name="MainGame" type="Node2D" unique_id=216440914]
 script = ExtResource("1_bdu0g")
-test_max_scale = 5.0
-test_total_shots = 9
-test_points_needed = 1500
 
-[node name="Node2D" type="Node2D" parent="." unique_id=671331778]
-unique_name_in_owner = true
-position = Vector2(640, 390)
-
-[node name="Target" parent="Node2D" unique_id=953089784 instance=ExtResource("7_1a64v")]
-unique_name_in_owner = true
-position = Vector2(174, -3)
+[node name="BG" type="TextureRect" parent="." unique_id=44686167]
+offset_right = 640.0
+offset_bottom = 360.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_3njer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=178631333]
 
@@ -32,6 +29,16 @@ offset_left = -2.0
 offset_right = -2.0
 
 [node name="OptionsMenu" parent="CanvasLayer" unique_id=86183853 instance=ExtResource("4_i5qds")]
+
+[node name="Gameover" parent="CanvasLayer" unique_id=14947237 instance=ExtResource("9_i5qds")]
+unique_name_in_owner = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=671331778]
+unique_name_in_owner = true
+position = Vector2(640, 390)
+
+[node name="Target" parent="Node2D" unique_id=953089784 instance=ExtResource("7_1a64v")]
+unique_name_in_owner = true
 
 [node name="Crosshair" parent="." unique_id=166048136 instance=ExtResource("5_b2ojb")]
 unique_name_in_owner = true

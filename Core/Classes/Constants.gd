@@ -13,5 +13,7 @@ enum PAUSE_STATES {
 }
 
 enum SCENES {
-	MAIN_GAME
+	MAIN_GAME,
+	INTRO,
+	START_MENU
 }

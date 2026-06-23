@@ -1,6 +1,9 @@
 extends Node
 
-signal on_target_hit(points: int)
+signal _on_target_hit(points: int)
+
+func emit_on_target_hit(points: int) -> void:
+	_on_target_hit.emit(points)
 
 signal _on_create_object(pos, ob_type, parent: Node)
 
