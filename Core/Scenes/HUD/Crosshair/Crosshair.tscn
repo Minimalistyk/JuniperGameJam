@@ -9,7 +9,6 @@ region = Rect2(0, 16, 16, 16)
 
 [node name="Crosshair" type="Node2D" unique_id=166048136]
 script = ExtResource("1_ko16k")
-drunk_level = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599090370]
 unique_name_in_owner = true
