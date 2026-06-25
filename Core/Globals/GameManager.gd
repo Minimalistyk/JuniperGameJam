@@ -2,6 +2,7 @@ extends Node
 const CURSOR = preload("uid://d0icul41gl0br")
 
 
+var points_mult: float = 1.0
 var drunk_level: int = 1#PODALCZAC
 var pulse_speed: float = 5.0#PODALCZAC
 
