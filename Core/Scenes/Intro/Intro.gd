@@ -39,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func show_next_slide() -> void:
 	current_index += 1
 	if current_index >= slides.size():
-		SceneManager.change_scene_to(Constants.SCENES.MAIN_GAME)
+		SceneManager.change_scene_to(Constants.SCENES.MENU_WHEEL)
 		return
 	
 	if current_index == 4:

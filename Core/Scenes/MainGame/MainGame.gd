@@ -25,6 +25,7 @@ func _ready() -> void:
 	drunk_level = GameManager.drunk_level
 	target.position = Vector2(25*drunk_level,25*drunk_level)
 	total_shots = GameManager.total_shots
+	points_mult = GameManager.points_mult
 	SignalManager._on_dagger_thrown.connect(decrese_shot)
 	SignalManager._on_target_hit.connect(on_target_hit)
 	GameManager.STATE = GameManager.GAME_STATES.AIM
