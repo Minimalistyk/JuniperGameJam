@@ -6,13 +6,12 @@ var target_x: float
 
 func _ready() -> void:
 	SignalManager.on_credits_menu_show.connect(on_credits_menu_show)
-	
 	target_x = credits_menu_container.position.x
 	credits_menu_container.position.x = 1280
 	visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Escape"):
+	if event.is_action_pressed("ui_cancel"):
 		if visible:
 			get_viewport().set_input_as_handled()
 			back(0)

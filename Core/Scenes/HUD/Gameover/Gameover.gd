@@ -5,6 +5,7 @@ extends Control
 @onready var label_2: Label = $Label2
 var time: float
 var pos: Vector2
+var previous_wave: float = 0
 
 func _ready() -> void:
 	pos = position
@@ -15,6 +16,18 @@ func _physics_process(delta: float) -> void:
 	var label_scale = (sin(time*2) + 1.25)
 	label_2.scale = Vector2(label_scale, label_scale)
 	texture_rect.rotation_degrees += 15 * delta
+	wheel_rotate_anim()
+
+func wheel_rotate_anim() -> void:
+	if !visible:
+		return
+	var wave = sin(time * 0.75)
+	if previous_wave < 0.55 and wave >= 0.55:
+		AudioManager.play_crack_sound()
+	elif previous_wave > -0.55 and wave <= -0.55:
+		AudioManager.play_crack_sound()
+	texture_rect.rotation_degrees = wave * 35 + 45
+	previous_wave = wave
 
 func show_gameover(points: int) -> void:
 	AudioManager.play_sfx("FAIL")

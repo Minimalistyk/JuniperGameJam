@@ -13,7 +13,11 @@ font_size = 48
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="SpinScene" type="Control" unique_id=1791090875]
+[sub_resource type="LabelSettings" id="LabelSettings_0jtil"]
+font = ExtResource("3_mhu3j")
+font_size = 64
+
+[node name="SpinScene" type="Control" unique_id=1791090875 node_paths=PackedStringArray("wheel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +26,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("5_3jpm7")
+wheel = NodePath("Node2D/TextureRect")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1280908500]
 layout_mode = 1
@@ -61,28 +67,38 @@ vertical_alignment = 1
 [node name="Node2D" type="Node2D" parent="." unique_id=8289411]
 position = Vector2(640, 370)
 
-[node name="SpinButton" type="Button" parent="Node2D" unique_id=1795965509 node_paths=PackedStringArray("wheel")]
-offset_left = -99.0
-offset_top = 181.0
-offset_right = 93.0
-offset_bottom = 243.0
+[node name="SpinButton" type="Button" parent="Node2D" unique_id=1795965509]
+unique_name_in_owner = true
+offset_left = -237.0
+offset_top = 215.0
+offset_right = -45.0
+offset_bottom = 277.0
 theme = ExtResource("4_jdl5q")
 theme_override_fonts/font = ExtResource("3_mhu3j")
 theme_override_font_sizes/font_size = 71
 text = "SPIN"
-script = ExtResource("5_3jpm7")
-wheel = NodePath("../TextureRect")
 
 [node name="RerollButton" type="Button" parent="Node2D" unique_id=548178299]
 unique_name_in_owner = true
-offset_left = -99.0
-offset_top = 260.0
-offset_right = 93.0
-offset_bottom = 322.0
+offset_left = 47.0
+offset_top = 215.0
+offset_right = 239.0
+offset_bottom = 277.0
 theme = ExtResource("4_jdl5q")
 theme_override_fonts/font = ExtResource("3_mhu3j")
 theme_override_font_sizes/font_size = 71
 text = "REROLL"
+
+[node name="INFO" type="Button" parent="Node2D" unique_id=1366338529]
+unique_name_in_owner = true
+offset_left = 304.0
+offset_top = 213.0
+offset_right = 496.0
+offset_bottom = 275.0
+theme = ExtResource("4_jdl5q")
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 71
+text = "INFO"
 
 [node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=2102805224]
 anchors_preset = 8
@@ -163,20 +179,62 @@ label_settings = SubResource("LabelSettings_wya03")
 
 [node name="Desc" type="Label" parent="." unique_id=724099637]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
-offset_left = 926.0
-offset_top = 514.0
-offset_right = 1142.0
-offset_bottom = 599.0
+offset_left = 930.0
+offset_top = 418.0
+offset_right = 1146.0
+offset_bottom = 525.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("3_mhu3j")
 theme_override_font_sizes/font_size = 24
 text = "DRUNK LEVEL = DIFFICULTY
+MAX DRUNK IS 10.
 REROLLING IS RECOMENDED 
-IF U ROLL MORE THEN 2
+IF U ROLL MORE THEN 2.
 YOU HAVE ONE REROLL!"
 horizontal_alignment = 1
 
+[node name="Desc2" type="Label" parent="." unique_id=1938749891]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 901.0
+offset_top = 209.0
+offset_right = 1171.0
+offset_bottom = 338.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 24
+text = "BEFORE EACH ROUND,
+YOU ROLL TO DETERMINE:
+HOW MANY KNIVES YOU CAN THROW,
+WHAT YOUR SCORE MULTIPLIER IS,
+AND HOW MUCH RUM
+YOU MUST DRINK."
+horizontal_alignment = 1
+
+[node name="spinleftlabel" type="Label" parent="." unique_id=319369402]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 464.0
+offset_top = 644.0
+offset_right = 536.0
+offset_bottom = 695.0
+text = "3/3"
+label_settings = SubResource("LabelSettings_0jtil")
+
+[node name="rereollspinleft" type="Label" parent="." unique_id=36019130]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 748.0
+offset_top = 643.0
+offset_right = 820.0
+offset_bottom = 694.0
+text = "1/1"
+label_settings = SubResource("LabelSettings_0jtil")
+
 [connection signal="mouse_entered" from="Node2D/SpinButton" to="Node2D/SpinButton" method="hover"]
 [connection signal="mouse_entered" from="Node2D/RerollButton" to="Node2D/SpinButton" method="hover"]
-[connection signal="pressed" from="Node2D/RerollButton" to="Node2D/SpinButton" method="_on_reroll_button_2_pressed"]
+[connection signal="pressed" from="Node2D/RerollButton" to="." method="_on_reroll_button_2_pressed"]
+[connection signal="pressed" from="Node2D/INFO" to="." method="_on_info_pressed"]

@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://cbh2uculnrhph"]
 
-[ext_resource type="LabelSettings" uid="uid://dqsl7r7x5iob6" path="res://Core/Resources/LabelWhite24Black4/LabelWhite24Black4.tres" id="1_hftua"]
 [ext_resource type="Script" uid="uid://d236tdcn6ydoq" path="res://Core/Scenes/HUD/GameHUD/GameHud.gd" id="1_w0laf"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_7vrpg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0laf"]
+font = ExtResource("3_7vrpg")
+font_size = 124
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vrpg"]
+font = ExtResource("3_7vrpg")
+font_size = 124
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6gopa"]
+font = ExtResource("3_7vrpg")
+font_size = 124
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1mqwj"]
+font = ExtResource("3_7vrpg")
+font_size = 124
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_01s77"]
+font = ExtResource("3_7vrpg")
+font_size = 34
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3wuh"]
+font = ExtResource("3_7vrpg")
+font_size = 28
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GameHUD" type="Control" unique_id=589994002]
 layout_mode = 3
@@ -26,14 +62,14 @@ layout_mode = 2
 [node name="PointsTextLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=883353059]
 layout_mode = 2
 text = "Score:"
-label_settings = ExtResource("1_hftua")
+label_settings = SubResource("LabelSettings_w0laf")
 
 [node name="PointsLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1585827650]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 text = "9322"
-label_settings = ExtResource("1_hftua")
+label_settings = SubResource("LabelSettings_7vrpg")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1624266621]
 layout_mode = 2
@@ -41,14 +77,14 @@ layout_mode = 2
 [node name="ReqPointsTextLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=628659807]
 layout_mode = 2
 text = "Goal:"
-label_settings = ExtResource("1_hftua")
+label_settings = SubResource("LabelSettings_6gopa")
 
 [node name="ReqPointsLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=54213304]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 text = "9"
-label_settings = ExtResource("1_hftua")
+label_settings = SubResource("LabelSettings_1mqwj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1456281691]
 layout_mode = 1
@@ -63,3 +99,23 @@ offset_right = -63.0
 offset_bottom = -49.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="ControlsLabel" type="Label" parent="." unique_id=932947424]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 623.0
+offset_right = 799.0
+offset_bottom = 707.0
+text = "Hold space to lock in your crossahir position 
+Release it when you are satisfied with the accuracy, 
+Q stops game and let you open settings menu"
+label_settings = SubResource("LabelSettings_01s77")
+
+[node name="Label" type="Label" parent="." unique_id=1688359384]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 157.0
+offset_right = 153.0
+offset_bottom = 180.0
+text = "POINTS MULT: x99"
+label_settings = SubResource("LabelSettings_d3wuh")

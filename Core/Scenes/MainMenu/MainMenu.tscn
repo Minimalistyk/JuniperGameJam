@@ -177,7 +177,7 @@ offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
-text = "Ver 1.0.260626"
+text = "Ver 1.1.260626"
 
 [node name="MainMenuAnimPlayer" type="AnimationPlayer" parent="." unique_id=1686535297]
 libraries/ = SubResource("AnimationLibrary_jkd46")

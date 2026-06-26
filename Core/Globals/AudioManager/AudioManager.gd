@@ -29,6 +29,7 @@ var sfx_tracks: Dictionary = {
 	"WIN": preload("uid://badk5gc83o486"),
 	"TICK": preload("uid://beqjky0fgxgdo"), #ten dziwek jak kolo sie kreci tyk tyk tyk tyk
 	"FAIL": preload("uid://dsh2riokq6w7u"),
+	"BREAK": preload("uid://2mc7u8altfxw")
 	
 }
 
