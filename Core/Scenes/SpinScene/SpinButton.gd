@@ -34,7 +34,7 @@ var whatisrolling :={
 	"0" : "PRESS SPACE TO CONTINUE!"
 }
 
-var speed_deg := 0
+var speed_deg := 0.0
 var spinning := false
 var spin_time_left := 0.0
 var spin_time_start := 0.0
@@ -45,10 +45,7 @@ var can_reroll: bool = true
 var tick_step: float = 22.5 
 var next_tick_angle: float = 0.0
 
-func _ready() -> void:
-	spin_button.pressed.connect(spin_wheel)
-
-func spin_wheel() -> void:
+func spin_wheel() -> void: #podlaczone od spin button 
 	AudioManager.play_click()
 	if spinning: 
 		return
@@ -81,12 +78,11 @@ func _process(delta: float) -> void:
 	var s = (sin(time/4) + 1.5) / 4.0 + 1.05
 	desc.scale = Vector2(s, s)
 	desc2.scale = Vector2(s, s)
-	
-	if spinning:
+	if spinning: 
 		if spin_time_left < spin_time_start / 2.0:
 			speed_deg = max(speed_deg - 1000 * delta, 0.0)
 		else:
-			speed_deg += int(1000) * int(delta) 
+			speed_deg += 1000.0 * delta
 			
 		wheel.rotation += deg_to_rad(speed_deg) * delta
 		spin_time_left -= delta
@@ -117,13 +113,13 @@ func _process(delta: float) -> void:
 					
 			amount_of_spins -= 1
 
-func _on_reroll_button_2_pressed() -> void:
+func _on_reroll_button_2_pressed() -> void: #rerol but podlaczony
 	amount_of_spins += 1
 	can_reroll = false
 	spin_wheel()
 
 
-func _on_info_pressed() -> void:
+func _on_info_pressed() -> void: #info podlaczone 
 	desc.show()
 	desc2.show()
 	info.disabled = true

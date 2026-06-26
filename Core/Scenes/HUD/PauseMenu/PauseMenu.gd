@@ -33,6 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func show_anim() -> void:
+	visible = true
 	menu_wheel.visible = true
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUART)
@@ -45,11 +46,15 @@ func show_menu() -> void:
 	show_anim()
 
 func hide_menu_anim() -> void:
+	
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUART)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(menu_wheel, "position:y", 720.0, 0.2)
-	tween.tween_callback(func(): menu_wheel.visible = false)
+	tween.tween_callback(func(): 
+		menu_wheel.visible = false
+		visible = false
+	)
 
 func hide_menu_logic() -> void:
 	PauseManager.set_pause(false)
