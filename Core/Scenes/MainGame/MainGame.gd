@@ -8,6 +8,10 @@ extends Node2D
 @onready var gameover_node: gameover_hud = %Gameover
 @onready var baloons: TextureRect = %Baloons
 
+@onready var label: Label = $Label
+var max_time: float = 5.0
+var time_left: float = 5.0
+
 var drunk_level: int
 var pulse_speed: float = 5.0
 var min_scale: float = 0.3
@@ -36,6 +40,15 @@ func _process(delta: float) -> void:
 		var current_spin_speed = 20 + (15 * sqrt(drunk_level))
 		node_2d.rotation_degrees -= current_spin_speed * delta
 
+	if GameManager.STATE == GameManager.GAME_STATES.AIM or GameManager.STATE == GameManager.GAME_STATES.HOLD_SPACE:
+		time_left -= delta
+		label.text = "TIME TO SHOT: "+ str(snapped(time_left, 0.1)) + "s" 
+		
+		if time_left <= 0.0:
+			time_left = 0.0
+			label.text = "TIME TO SHOT: 0.0s"
+			GameManager.STATE = GameManager.GAME_STATES.RELEASE_SPACE
+
 func checkwin() -> bool:
 	if GameManager.STATE == GameManager.GAME_STATES.CHECK_POINTS:
 		if GameManager.current_points >= GameManager.points_needed: 
@@ -59,6 +72,7 @@ func setup() -> void:
 	game_hud.start_game()
 
 func decrese_shot(_pos: Vector2) -> void:
+	time_left = max_time # Resetujemy timer dla kolejnego noża
 	total_shots -= 1 
 	game_hud.update_daggers(total_shots)
 	
