@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://kyu0cq4u2h87"]
 
 [ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="1_pdwo8"]
+[ext_resource type="PackedScene" uid="uid://d1ul87ri12w2v" path="res://Core/Scenes/HUD/PauseMenu/PauseMenu.tscn" id="2_orndt"]
 [ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_mhu3j"]
+[ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="3_vsjcv"]
 [ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://Core/BaseTheme.tres" id="4_jdl5q"]
+[ext_resource type="PackedScene" uid="uid://cu7rg45kdngkb" path="res://Core/Scenes/HUD/CreditsMenu/Credits.tscn" id="4_l2b26"]
 [ext_resource type="Script" uid="uid://bigbv5k6hgdv8" path="res://Core/Scenes/SpinScene/SpinButton.gd" id="5_3jpm7"]
 [ext_resource type="Texture2D" uid="uid://bl8nrmsbvxch1" path="res://Assets/spinwheel.png" id="6_r2vlo"]
 [ext_resource type="Texture2D" uid="uid://c1pwdwahp25tf" path="res://Assets/wskaznik.png" id="7_qm18s"]
@@ -28,6 +31,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("5_3jpm7")
 wheel = NodePath("Node2D/TextureRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=762319254]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=42163893 instance=ExtResource("2_orndt")]
+visible = false
+offset_left = -2.0
+offset_right = -2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsMenu" parent="CanvasLayer" unique_id=86183853 instance=ExtResource("3_vsjcv")]
+
+[node name="Credits" parent="CanvasLayer" unique_id=775341443 instance=ExtResource("4_l2b26")]
+process_mode = 3
+offset_left = 2.999939
+offset_top = -1.0000305
+offset_right = 2.999939
+offset_bottom = -1.0000305
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1280908500]
 layout_mode = 1
@@ -235,6 +255,7 @@ text = "1/1"
 label_settings = SubResource("LabelSettings_0jtil")
 
 [connection signal="mouse_entered" from="Node2D/SpinButton" to="Node2D/SpinButton" method="hover"]
+[connection signal="pressed" from="Node2D/SpinButton" to="." method="spin_wheel"]
 [connection signal="mouse_entered" from="Node2D/RerollButton" to="Node2D/SpinButton" method="hover"]
 [connection signal="pressed" from="Node2D/RerollButton" to="." method="_on_reroll_button_2_pressed"]
 [connection signal="pressed" from="Node2D/INFO" to="." method="_on_info_pressed"]
