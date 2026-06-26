@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://kyu0cq4u2h87"]
+
+[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="1_pdwo8"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_mhu3j"]
+[ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://Core/BaseTheme.tres" id="4_jdl5q"]
+[ext_resource type="Script" uid="uid://bigbv5k6hgdv8" path="res://Core/Scenes/SpinScene/SpinButton.gd" id="5_3jpm7"]
+[ext_resource type="Texture2D" uid="uid://bl8nrmsbvxch1" path="res://Assets/spinwheel.png" id="6_r2vlo"]
+[ext_resource type="Texture2D" uid="uid://c1pwdwahp25tf" path="res://Assets/wskaznik.png" id="7_qm18s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wya03"]
+font = ExtResource("3_mhu3j")
+font_size = 48
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="SpinScene" type="Control" unique_id=1791090875]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1280908500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -648.5
+offset_top = -363.0
+offset_right = 648.5
+offset_bottom = 363.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pdwo8")
+
+[node name="WhatIsRolling" type="Label" parent="." unique_id=596289144]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -284.0
+offset_right = 180.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 80
+text = "ROLL: DRUNK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="." unique_id=8289411]
+position = Vector2(640, 370)
+
+[node name="SpinButton" type="Button" parent="Node2D" unique_id=1795965509 node_paths=PackedStringArray("wheel")]
+offset_left = -99.0
+offset_top = 181.0
+offset_right = 93.0
+offset_bottom = 243.0
+theme = ExtResource("4_jdl5q")
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 71
+text = "SPIN"
+script = ExtResource("5_3jpm7")
+wheel = NodePath("../TextureRect")
+
+[node name="RerollButton" type="Button" parent="Node2D" unique_id=548178299]
+unique_name_in_owner = true
+offset_left = -99.0
+offset_top = 260.0
+offset_right = 93.0
+offset_bottom = 322.0
+theme = ExtResource("4_jdl5q")
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 71
+text = "REROLL"
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=2102805224]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_r2vlo")
+
+[node name="Show" type="TextureRect" parent="Node2D" unique_id=1565443887]
+offset_left = -22.0
+offset_top = -198.0
+offset_right = 18.0
+offset_bottom = -158.0
+texture = ExtResource("7_qm18s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=21639784]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 305.0
+offset_right = 464.0
+offset_bottom = 427.0
+scale = Vector2(0.96104175, 0.96104175)
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=593280288]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=318325665]
+layout_mode = 2
+text = "TOTAL SHOTS (x2): "
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="ShotsLabel" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=616395496]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1831153805]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1404939338]
+layout_mode = 2
+text = "CURRENT POINTS MULT: "
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="MultLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1212169276]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "1"
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=593408927]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=746140817]
+layout_mode = 2
+text = "ADDITIONAL DRUNK LEVEL: 
+YES IT STACKS"
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="DrunkLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=319903091]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_wya03")
+
+[node name="Desc" type="Label" parent="." unique_id=724099637]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 926.0
+offset_top = 514.0
+offset_right = 1142.0
+offset_bottom = 599.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_mhu3j")
+theme_override_font_sizes/font_size = 24
+text = "DRUNK LEVEL = DIFFICULTY
+REROLLING IS RECOMENDED 
+IF U ROLL MORE THEN 2
+YOU HAVE ONE REROLL!"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Node2D/SpinButton" to="Node2D/SpinButton" method="hover"]
+[connection signal="mouse_entered" from="Node2D/RerollButton" to="Node2D/SpinButton" method="hover"]
+[connection signal="pressed" from="Node2D/RerollButton" to="Node2D/SpinButton" method="_on_reroll_button_2_pressed"]

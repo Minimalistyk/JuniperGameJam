@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cos1amfkutc00"]
 
-[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="1_8n4uo"]
-[ext_resource type="Script" uid="uid://cf7pvdai04m0s" path="res://Core/Scenes/MainMenu/MainMenu.gd" id="1_jkd46"]
-[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="2_2f7lw"]
-[ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="3_6waah"]
-[ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_yott5"]
-[ext_resource type="PackedScene" uid="uid://cu7rg45kdngkb" path="res://Core/Scenes/HUD/CreditsMenu/Credits.tscn" id="6_kwkv3"]
+[ext_resource type="Script" uid="uid://cf7pvdai04m0s" path="res://Core/Scenes/MainMenu/MainMenu.gd" id="1_kwkv3"]
+[ext_resource type="Texture2D" uid="uid://ccnmjb3ch2iix" path="res://Assets/MainBG.png" id="2_82aa5"]
+[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_smfjf"]
+[ext_resource type="PackedScene" uid="uid://cw2ie61vlvj58" path="res://Core/Scenes/HUD/MenuWheel/MenuWheel.tscn" id="4_tbwbg"]
+[ext_resource type="PackedScene" uid="uid://cmnilafhfqyap" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.tscn" id="5_fggsu"]
+[ext_resource type="PackedScene" uid="uid://cu7rg45kdngkb" path="res://Core/Scenes/HUD/CreditsMenu/Credits.tscn" id="6_yi4px"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4uo"]
-font = ExtResource("1_8n4uo")
+font = ExtResource("3_smfjf")
 font_size = 124
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
@@ -125,7 +125,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jkd46")
+script = ExtResource("1_kwkv3")
 
 [node name="BG" type="TextureRect" parent="." unique_id=1213779498]
 layout_mode = 1
@@ -134,7 +134,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2f7lw")
+texture = ExtResource("2_82aa5")
 
 [node name="TitleLabel" type="Label" parent="." unique_id=224943812]
 layout_mode = 1
@@ -149,7 +149,7 @@ grow_horizontal = 2
 text = "DRUNK THROWERS"
 label_settings = SubResource("LabelSettings_8n4uo")
 
-[node name="MenuWheel" parent="." unique_id=1883214477 instance=ExtResource("3_6waah")]
+[node name="MenuWheel" parent="." unique_id=1883214477 instance=ExtResource("4_tbwbg")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -177,12 +177,12 @@ offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
-text = "Ver 0.1.220626"
+text = "Ver 0.9.260626"
 
 [node name="MainMenuAnimPlayer" type="AnimationPlayer" parent="." unique_id=1686535297]
 libraries/ = SubResource("AnimationLibrary_jkd46")
 
-[node name="OptionsMenu" parent="." unique_id=86183853 instance=ExtResource("5_yott5")]
+[node name="OptionsMenu" parent="." unique_id=86183853 instance=ExtResource("5_fggsu")]
 layout_mode = 1
 
 [node name="BlackRect" type="ColorRect" parent="." unique_id=1929607744]
@@ -196,9 +196,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Credits" parent="." unique_id=775341443 instance=ExtResource("6_kwkv3")]
-layout_mode = 1
-
 [node name="WhiteRect" type="ColorRect" parent="." unique_id=1465186941]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -211,3 +208,6 @@ grow_vertical = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1356651774]
 unique_name_in_owner = true
+
+[node name="Credits" parent="." unique_id=775341443 instance=ExtResource("6_yi4px")]
+layout_mode = 1

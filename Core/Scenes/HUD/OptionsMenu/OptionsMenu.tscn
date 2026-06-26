@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmnilafhfqyap"]
 
-[ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://BaseTheme.tres" id="1_baomx"]
+[ext_resource type="Theme" uid="uid://bad5mqpq57byo" path="res://Core/BaseTheme.tres" id="1_baomx"]
 [ext_resource type="Script" uid="uid://bj27c5n1blmko" path="res://Core/Scenes/HUD/OptionsMenu/OptionsMenu.gd" id="1_iatim"]
 [ext_resource type="Texture2D" uid="uid://h4vhqby06avo" path="res://Assets/HUD/Slider.png" id="3_iatim"]
 [ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="3_qray3"]
@@ -101,7 +101,9 @@ theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")
 theme_override_styles/grabber_area = ExtResource("5_qray3")
 theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("6_kf17o")
 audio_bus_name = "Music"
 
@@ -125,7 +127,9 @@ theme_override_icons/grabber_highlight = SubResource("AtlasTexture_iatim")
 theme_override_styles/slider = ExtResource("4_2pwlk")
 theme_override_styles/grabber_area = ExtResource("5_qray3")
 theme_override_styles/grabber_area_highlight = ExtResource("5_qray3")
-value = 100.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("6_kf17o")
 audio_bus_name = "SFX"
 

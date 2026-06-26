@@ -10,9 +10,10 @@ var options_up: bool
 func _ready() -> void:
 	SignalManager._on_start_button_pressed.connect(resume)
 	SignalManager._on_options_button_pressed.connect(open_options)
-	SignalManager._on_credits_button_pressed.connect(open_options)
+	SignalManager._on_credits_button_pressed.connect(open_credits)
 	SignalManager._on_quit_button_pressed.connect(quit)
 	SignalManager._on_options_menu_close.connect(on_options_menu_close)
+	SignalManager.on_credits_menu_close.connect(on_options_menu_close)
 	target_y = menu_wheel.position.y
 	hide_menu_logic()
 	hide_menu_anim()

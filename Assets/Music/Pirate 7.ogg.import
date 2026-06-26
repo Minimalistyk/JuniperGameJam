@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6ga10ige8q7s"
+path="res://.godot/imported/Pirate 7.ogg-a6cb7091007a03ec444411829863a56f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Pirate 7.ogg"
+dest_files=["res://.godot/imported/Pirate 7.ogg-a6cb7091007a03ec444411829863a56f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

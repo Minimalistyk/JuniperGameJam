@@ -11,18 +11,20 @@ var wandering_time: float
 var charging_time: float
 var starting_scale: Vector2
 
-func _ready() -> void: #to nie jest _ready!
-	curve_power -= drunk_level * 0.05 #to jest od tego jak celownik przyspiesza zmaine rozmairu gdy jest maly
-	curve_power = clampf(curve_power, 0.2, 0.5)
+func _ready() -> void: 
 	starting_scale = sprite.scale
 	reset()
+	curve_power -= drunk_level * 0.05 #to jest od tego jak celownik przyspiesza zmaine rozmairu gdy jest maly
+	curve_power = clampf(curve_power, 0.2, 0.5)
+	
+	
 
 func reset() -> void:
 	drunk_level = GameManager.drunk_level
 	pulse_speed = GameManager.pulse_speed
 	
 	sprite.scale = starting_scale
-	rotation_speed = drunk_level
+	rotation_speed = drunk_level*0.75
 	sprite.offset = Vector2(2*drunk_level,2*drunk_level)
 	charging_time = 0
 	wandering_time = 0
@@ -37,7 +39,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	#print(GameManager.STATE)
 	if GameManager.STATE == GameManager.GAME_STATES.AIM:
 		wandering_time += delta 
 		rotation += rotation_speed * delta

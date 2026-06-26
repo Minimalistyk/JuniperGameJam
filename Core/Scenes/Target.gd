@@ -58,6 +58,6 @@ func hit_target(hit_position: Vector2) -> void:
 		base_points = 0
 	# Wysłanie sygnału, jeśli przyznano punkty
 	if base_points > 0:
-		AudioManager.play_click()
+		AudioManager.play_target_sound()
 		SignalManager.emit_on_target_hit(base_points)
 		SignalManager.emit_on_create_object(hit_position, Constants.OBJECT_TYPE.DEBUG_POINT, self)
