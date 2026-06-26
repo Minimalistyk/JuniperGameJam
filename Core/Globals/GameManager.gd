@@ -32,6 +32,7 @@ func _ready() -> void:
 	SignalManager._on_target_hit.connect(update_score_from_target) 
 
 
+
 func update_score_from_target(points_earned: int) -> void:
 	current_points += points_earned * points_mult
 

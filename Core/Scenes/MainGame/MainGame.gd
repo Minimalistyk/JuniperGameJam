@@ -19,6 +19,8 @@ var points_needed: int = 500
 var points_mult: float = 1.5 
 
 func _ready() -> void:
+	if GameManager.drunk_level > 9:
+		GameManager.drunk_level = 8
 	baloons.position.y = 1440
 	drunk_level = GameManager.drunk_level
 	target.position = Vector2(20*drunk_level,20*drunk_level)
@@ -67,5 +69,5 @@ func decrese_shot(_pos: Vector2) -> void:
 		gameover()
 
 func gameover() -> void:
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.25).timeout
 	gameover_node.show_gameover(GameManager.current_points)

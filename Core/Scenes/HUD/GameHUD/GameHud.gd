@@ -5,6 +5,7 @@ const SABER = preload("uid://c2iqauwhtg3gb")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var p_label: Label = %PointsLabel
 @onready var req_p_label: Label = %ReqPointsLabel
+@onready var label: Label = $Label
 
 var total_shots: int = 0
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	p_label.text = str(GameManager.current_points)
 	req_p_label.text = str(GameManager.points_needed)
+	label.text = "POINTS MULT: x" + str(GameManager.points_mult)
 	
 	if GameManager.STATE == GameManager.GAME_STATES.GAME_OVER:
 		visible = false

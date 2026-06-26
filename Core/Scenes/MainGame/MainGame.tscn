@@ -11,11 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dk5aacwr5msea" path="res://Assets/winscreen.png" id="7_b2ojb"]
 [ext_resource type="PackedScene" uid="uid://cu7rg45kdngkb" path="res://Core/Scenes/HUD/CreditsMenu/Credits.tscn" id="8_4mm24"]
 [ext_resource type="PackedScene" uid="uid://dgnxwdrmvy0xk" path="res://Core/Scenes/HUD/Gameover/Gameover.tscn" id="9_i5qds"]
-[ext_resource type="FontFile" uid="uid://dls548jky5uw6" path="res://Assets/Fonts/monogram-extended.ttf" id="12_ovgbs"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_q30tl"]
-font = ExtResource("12_ovgbs")
-font_size = 24
 
 [node name="MainGame" type="Node2D" unique_id=216440914]
 script = ExtResource("1_bdu0g")
@@ -69,11 +64,3 @@ unique_name_in_owner = true
 scale = Vector2(4, 4)
 
 [node name="ObjectMaker" parent="." unique_id=831495408 instance=ExtResource("6_4mm24")]
-
-[node name="Label" type="Label" parent="." unique_id=619670102]
-offset_left = 23.0
-offset_top = 683.0
-offset_right = 401.0
-offset_bottom = 706.0
-text = "Hold space to concentrate, release to shot"
-label_settings = SubResource("LabelSettings_q30tl")
