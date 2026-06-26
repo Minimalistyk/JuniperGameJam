@@ -86,7 +86,7 @@ theme_override_styles/pressed = ExtResource("5_vows6")
 theme_override_styles/hover = ExtResource("5_vows6")
 theme_override_styles/disabled = ExtResource("5_vows6")
 text = "PRESS HERE
-TO RESTART
+TO RESET
 "
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

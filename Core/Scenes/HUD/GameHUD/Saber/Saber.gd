@@ -7,7 +7,6 @@ var id: int = 0
 var total_shots_left: int = 0
 
 func _ready() -> void:
-	SignalManager._on_dagger_thrown.connect(count_shots)
 	set_timer()
 
 func _process(_delta: float) -> void:
@@ -32,6 +31,3 @@ func play_anim() -> void:
 func play_idle() -> void:
 	anim_saber.play("idle")
 	set_timer()
-
-func count_shots(_value: Vector2) -> void: 
-	total_shots_left-=1
