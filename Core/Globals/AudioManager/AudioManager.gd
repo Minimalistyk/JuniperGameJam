@@ -5,6 +5,7 @@ var click_sound: AudioStreamPlayer
 var target_sound: AudioStreamPlayer
 var win_sound: AudioStreamPlayer
 var music: AudioStreamPlayer
+var crack: AudioStreamPlayer
 
 var current_music_key: String = "" # Pamięć ostatniego utworu
 
@@ -19,7 +20,8 @@ var hud_tracks: Dictionary = {
 	"MENU_6" : preload("uid://b0bcc0ng1job4"), #click
 	"MENU_7" : preload("uid://dxqi4cw8eq8l8"), #hover
 	"MENU_24" : preload("uid://qwddk246knm2"),
-	"WOOD_CHOP": preload("uid://cr3j884cli1hk")
+	"WOOD_CHOP": preload("uid://cr3j884cli1hk"),
+	"CRACK" : preload("uid://djyujbe5yllw0")
 }
 
 var sfx_tracks: Dictionary = {
@@ -34,12 +36,10 @@ func _ready() -> void:
 	hover_sound = create_player("HUD", hud_tracks["MENU_7"])
 	click_sound = create_player("HUD", hud_tracks["WOOD_CHOP"])
 	target_sound = create_player("SFX", sfx_tracks["WOOD_CHOP"])
+	crack = create_player("HUD", hud_tracks["CRACK"]) 
 	music = create_player("Music", null)
-	#win_sound = create_player("SFX", sfx_tracks["WIN"])
-	# Podpinamy sygnał, który odpali się sam, gdy utwór dobiegnie końca
 	music.finished.connect(_on_music_finished)
 	
-	# Startujemy zapętlony system
 	play_random_music()
 
 func create_player(bus_name: String, stream: AudioStream = null) -> AudioStreamPlayer:
@@ -60,6 +60,10 @@ func play_target_sound() -> void:
 func play_hover() -> void:
 	hover_sound.pitch_scale = randf_range(0.8, 1.2)
 	hover_sound.play()
+
+func play_crack_sound() -> void:
+	crack.pitch_scale = randf_range(0.8, 1.2)
+	crack.play()
 
 func play_sfx(sfx_name: String, randomize_pitch: bool = false) -> void:
 	if !sfx_tracks.has(sfx_name):
