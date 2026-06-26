@@ -745,7 +745,7 @@ variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 base_font = SubResource("FontFile_hy8bj")
 variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 
-[sub_resource type="Image" id="Image_hy8bj"]
+[sub_resource type="Image" id="Image_83x41"]
 data = {
 "data": PackedByteArray("/////////////////////w=="),
 "format": "RGBA8",
@@ -755,7 +755,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_emib7"]
-image = SubResource("Image_hy8bj")
+image = SubResource("Image_83x41")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifkka"]
 content_margin_left = 4.0

@@ -6,6 +6,7 @@ extends Control
 @export var start_button_text: String = "START"
 
 var time_passed: float = 0
+var previous_wave: float = 0
 
 func _ready():
 	pivot_offset = size / 2
@@ -16,9 +17,16 @@ func _process(delta):
 
 
 func wheel_rotate_anim(delta: float) -> void:
+	if !visible:
+		return
 	time_passed += delta
 	var wave = sin(time_passed * 0.75)
+	if previous_wave < 0.55 and wave >= 0.55:
+		AudioManager.play_crack_sound()
+	elif previous_wave > -0.55 and wave <= -0.55:
+		AudioManager.play_crack_sound()
 	rotation_degrees = wave * 35 + 45
+	previous_wave = wave
 
 func button_pressed_anim() -> void:
 	var original_pos = position

@@ -1,4 +1,4 @@
-# Spinning Drunken Pirates
+# DRUNK THROWERS
 
 A short 2D arcade game created during a 7-day Game Jam. Test your accuracy, manage risk, and try to hit the target while your crosshair becomes increasingly unpredictable with every level of intoxication.
 
